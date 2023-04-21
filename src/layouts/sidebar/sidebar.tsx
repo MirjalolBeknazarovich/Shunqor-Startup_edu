@@ -9,7 +9,10 @@ const Sidebar = ({toggle}: SidebarProps): JSX.Element => {
   const router = useRouter();
 
   return (
-    <Box w={{base: "full", lg: '300px'}} h={'90vh'} 
+    <Box 
+    zIndex={1001}
+    w={{base: "full", lg: '300px'}} 
+    h={'90vh'} 
     bg={useColorModeValue('gray.50', 'gray.900')}
     color={useColorModeValue('gray.700', 'gray.200')}
     pos={'fixed'}
@@ -25,14 +28,14 @@ const Sidebar = ({toggle}: SidebarProps): JSX.Element => {
     }}
     transition={'all 1s ease'}>
       <Container maxW={'container.xl'}>
-        {navigation.map(item => (
-          <Box key={item.title} mt={10}>
+        {navigation.map((item, endix) => (
+          <Box key={endix} mt={10}>
             <Text>{item.title}</Text>
             {
-              item.links.map(nav => {
+              item.links.map((nav, index) => {
                 const active = router.asPath == nav.route;
                 return (
-                  <Link href={`${nav.route}`}>
+                  <Link href={`${nav.route}`} key={index}>
                     <Button colorScheme={'facebook'} variant={ active ? 'solid' : 'ghost' } w={'full'} justifyContent={'flex-start'} h={14} mt={2} >
                       <HStack gap={2}>
                         <Icon as={nav.icon} />
