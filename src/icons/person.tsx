@@ -4,10 +4,10 @@ import { IconProp } from './icons.props';
 const PersonIcons = ({ ...props }: IconProp): JSX.Element => {
 	return (
 		<Icon width='45' height='46' viewBox='0 0 45 46' fill='#020288' xmlns='http://www.w3.org/2000/svg' {...props}>
-			<g clip-path='url(#clip0_200_7182)'>
+			<g clipPath='url(#clip0_200_7182)'>
 				<path
-					fill-rule='evenodd'
-					clip-rule='evenodd'
+					fillRule='evenodd'
+					clipRule='evenodd'
 					d='M9.36523 33.8444C9.75125 40.3795 35.2901 40.3715 35.6665 33.8442C35.6665 31.4858 31.3022 29.5117 25.4535 29.0084L25.1526 32.6193C25.0724 33.5827 24.3615 34.3771 23.3948 34.3771H21.637C20.6703 34.3771 19.9594 33.5829 19.8792 32.6193C19.7789 31.4157 19.6785 30.212 19.5782 29.0083C13.7296 29.5116 9.36523 31.4857 9.36523 33.8444Z'
 					fill='#B2F0FB'
 				/>

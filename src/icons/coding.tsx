@@ -3,7 +3,7 @@ import { IconProp } from './icons.props';
 
 const Coding = ({ ...props }: IconProp): JSX.Element => (
 	<Icon width='45' height='46' viewBox='0 0 45 46' fill='#01018B' xmlns='http://www.w3.org/2000/svg' {...props}>
-		<g clip-path='url(#clip0_200_7143)'>
+		<g clipPath='url(#clip0_200_7143)'>
 			<path
 				d='M35.2961 12.8926V27.895C35.2961 29.3572 34.1108 30.5425 32.6486 30.5425H12.3513C10.8892 30.5425 9.70378 29.3572 9.70378 27.895V12.8926H6.17383V34.0725H38.8261V12.8926H35.2961Z'
 				fill='#91EFFB'

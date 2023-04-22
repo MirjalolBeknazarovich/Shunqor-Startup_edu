@@ -4,7 +4,7 @@ import { IconProp } from './icons.props';
 const Design = ({ ...props }: IconProp): JSX.Element => {
 	return (
 		<Icon width='45' height='46' viewBox='0 0 45 46' fill='#020288' xmlns='http://www.w3.org/2000/svg' {...props}>
-			<g clip-path='url(#clip0_200_7111)'>
+			<g clipPath='url(#clip0_200_7111)'>
 				<path
 					d='M38.8477 16.0082V37.1019H6.15234V16.0082H14.6698L13.7109 18.6449L22.5 30.9496L31.2891 18.6449L30.3302 16.0082H38.8477Z'
 					fill='#E2C4FF'
