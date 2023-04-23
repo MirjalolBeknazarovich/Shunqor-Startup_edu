@@ -10,8 +10,8 @@ const AllCoursesCard = ({ course }: AllCoursesCardProps) => {
     return (
         <>
             <Box py={3}>
-                <Flex gap={4}>
-                    <Image src={course.image} alt={course.title} w={'250px'} h={'280px'} borderRadius={'lg'} objectFit={'cover'} />
+                <Flex gap={4} direction={{ base: 'column', md: 'row' }}>
+                    <Image src={course.image} alt={course.title} w={{ base: 'full', md: '250px' }} h={'280px'} borderRadius={'lg'} objectFit={'cover'} />
                     <Stack>
                         <HStack>
                             <Text color={'#e59819'}>{course.reviewAvarage.toFixed(1)}</Text>
@@ -20,29 +20,30 @@ const AllCoursesCard = ({ course }: AllCoursesCardProps) => {
                         </HStack>
                         <Heading fontSize={'xl'}>{course.title}</Heading>
                         <Text>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel voluptatibus quae esse quasi eaque delectus.</Text>
-                        <Flex gap={3} fontSize={'14px'}>
+                        <Flex gap={3} fontSize={'14px'} direction={{ base: 'column', md: 'row' }}>
                             <HStack align={'center'}>
                                 <Image src={course.author.avatar} alt={course.author.firstName} w={50} h={50} borderRadius={'full'} />
                                 <Text>{course.author.lastName}. {course.author.firstName[0]}</Text>
                             </HStack>
+                            <HStack gap={3}>
+                                <Flex align={'center'} gap={1}>
+                                    <Icon as={CiViewList} />
+                                    <Text>{course.lessonCount} lesson</Text>
+                                </Flex>
+                                <Flex align={'center'} gap={1}>
+                                    <Icon as={AiOutlineClockCircle} />
+                                    <Text>{course.totalHour} hours</Text>
+                                </Flex>
+                                <Flex align={'center'} gap={1}>
+                                    <Icon as={SiGoogleanalytics} />
+                                    <Text>{course.level}</Text>
+                                </Flex>
+                            </HStack>
                         </Flex>
-                        <Flex gap={3}>
-                            <Flex align={'center'} gap={1}>
-                                <Icon as={CiViewList} />
-                                <Text>{course.lessonCount} lesson</Text>
-                            </Flex>
-                            <Flex align={'center'} gap={1}>
-                                <Icon as={AiOutlineClockCircle} />
-                                <Text>{course.totalHour} hours</Text>
-                            </Flex>
-                            <Flex align={'center'} gap={1}>
-                                <Icon as={SiGoogleanalytics} />
-                                <Text>{course.level}</Text>
-                            </Flex>
-                        </Flex>
+
                         <Divider />
-                        <Flex align={'center'} justify={'space-between'} >
-                            <Text fontSize={'xl'} fontWeight={'bold'} mr={10}>{course.price.toLocaleString('en-US', {style: 'currency', currency: 'USD'})}</Text>
+                        <Flex align={{ base: 'flex-start', lg: 'center' }} justify={'space-between'} direction={{ base: 'column', md: 'row' }} >
+                            <Text fontSize={'xl'} fontWeight={'bold'} mr={10}>{course.price.toLocaleString('en-US', { style: 'currency', currency: 'USD' })}</Text>
                             <Flex gap={4}>
                                 <Button rightIcon={<BsMinecartLoaded />} colorScheme={'facebook'} >Add to card</Button>
                                 <Button colorScheme={'facebook'} variant={'outline'} >Detail</Button>

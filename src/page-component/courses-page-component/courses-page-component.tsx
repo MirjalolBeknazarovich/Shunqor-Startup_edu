@@ -15,14 +15,14 @@ const CoursesPageComponent = () => {
                 <Input h={14} w={'full'} bg={'white'} color={'gray.900'} placeholder={t('search_input_placeholder', { ns: 'courses' }) || ''} _placeholder={{ color: 'gray.500' }} focusBorderColor={'facebook'} />
                 <Button pos={'absolute'} right={2} top={2} colorScheme={'facebook'} zIndex={98}>{t('search_input_btn', { ns: 'courses' })}</Button>
             </Box>
-            <Flex mt={5} gap={5}>
-                <Box w={'30%'} h={'fit-content'} p={5} border={'1px'} borderRadius={'lg'} borderColor={useColorModeValue('gray.200', 'gray.700')} >
+            <Flex mt={5} gap={5} direction={{base: 'column', lg: 'row' }}>
+                <Box w={{base: '100%', lg: '30%'}} h={'fit-content'} p={5} border={'1px'} borderRadius={'lg'} borderColor={useColorModeValue('gray.200', 'gray.700')} >
                     {coursesFilter.map((item, index) => (
                         <FilterItem item={item} index={index} key={item.id} />
                     ))}
 
                 </Box>
-                <Box w={'70%'}>
+                <Box w={{base: '100%', lg: '70%'}}>
                     {courses.map(item => (
                         <AllCoursesCard key={item.title} course={item} />
                     ))}
