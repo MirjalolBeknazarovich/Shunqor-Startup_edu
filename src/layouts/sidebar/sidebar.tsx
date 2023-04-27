@@ -35,7 +35,7 @@ const Sidebar = ({toggle}: SidebarProps): JSX.Element => {
             <Text>{ t(item.title, {ns: 'layout'}) }</Text>
             {
               item.links.map((nav, index) => {
-                const active = router.asPath == nav.route;
+                const active = `/${router.pathname.split('/')[1]}` == nav.route;
                 return (
                   <Link href={`${nav.route}`} key={index}>
                     <Button colorScheme={'facebook'} variant={ active ? 'solid' : 'ghost' } w={'full'} justifyContent={'flex-start'} h={14} mt={2} >

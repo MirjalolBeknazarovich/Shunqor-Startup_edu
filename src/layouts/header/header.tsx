@@ -8,6 +8,7 @@ import Link from "next/link";
 import { HeaderProps } from "./header.props";
 import { language } from "src/config/constants";
 import { useTranslation } from "react-i18next";
+import { useRouter } from "next/router";
 
 const Header = ({ onToggle }: HeaderProps): JSX.Element => {
 
@@ -15,7 +16,10 @@ const Header = ({ onToggle }: HeaderProps): JSX.Element => {
 
   const { t, i18n } = useTranslation();
 
+  const router = useRouter();
+
   const onLanguage = (lng: string) => {
+    router.replace(router.asPath);
     i18n.changeLanguage(lng);
   };
 
