@@ -1,8 +1,9 @@
 import { withLayout } from 'src/layouts/layout';
+import { ContactPageComponenet } from 'src/page-component';
 
 const ContactPage = () => {
   return (
-    <div>ContactPage</div>
+    <ContactPageComponenet />
   );
 };
 
