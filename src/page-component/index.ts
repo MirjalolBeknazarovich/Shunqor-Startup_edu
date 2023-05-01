@@ -7,3 +7,4 @@ export { default as AboutPageComponent } from './about-page-component/about-page
 export { default as ContactPageComponenet } from './contact-page-componenet/contact-page-componenet';
 export { default as PricingPageComponent } from './pricing-page-component/pricing-page-component';
 export { default as FaqPageComponent } from './faq-page-component/faq-page-component';
+export { default as AuthPageComponent } from './auth-page-component/auth-page-component';

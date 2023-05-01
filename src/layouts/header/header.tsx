@@ -39,7 +39,7 @@ const Header = ({ onToggle }: HeaderProps): JSX.Element => {
       <Flex h={'full'} justify={'space-between'} align={'center'}>
         <HStack>
           <Icon as={BiMenuAltLeft} onClick={onToggle} w={6} h={6} />
-          <Link href={'/'}>{colorMode === 'light' ? <DarkLogo /> : <LightLogo />}</Link>
+          <Link href={'/'}>{colorMode === 'light' ? <DarkLogo /> : <LightLogo />} Shunqor</Link>
         </HStack>
         <HStack>
           <IconButton aria-label="support" icon={<MdOutlineContactSupport />} colorScheme={'facebook'} variant={'ghost'} />
@@ -59,7 +59,7 @@ const Header = ({ onToggle }: HeaderProps): JSX.Element => {
             colorScheme={'facebook'}
             variant={'outline'}
           />
-          <Button rightIcon={<BiUserCircle />} colorScheme={'facebook'}>{ t('login', {ns: 'layout'}) }</Button>
+          <Button rightIcon={<BiUserCircle />} onClick={() => router.push('/auth')} colorScheme={'facebook'}>{ t('login', {ns: 'layout'}) }</Button>
         </HStack>
       </Flex>
     </Box>
