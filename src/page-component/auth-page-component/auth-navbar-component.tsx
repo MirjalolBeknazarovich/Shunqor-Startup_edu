@@ -11,7 +11,7 @@ const AuthNavbarComponent = () => {
     const linkHover = useColorModeValue('black', 'white');
     return (
         <>
-            <Box zIndex={1001} w={'full'} h={'10vh'} pos={'fixed'} top={0} left={0} right={0}>
+            <Box zIndex={1001} w={'full'} h={'10vh'}>
                 <Container maxW={'container.lg'}>
                     <Flex align={'center'} justify={'space-between'} h={'10vh'}>
                         <Link href={'/'}>{colorMode === 'light' ? <DarkLogo /> : <LightLogo />}</Link>

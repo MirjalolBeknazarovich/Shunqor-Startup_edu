@@ -108,7 +108,7 @@ const AuthPageComponent = () => {
 						<SocialMedia />
 					</Stack>
                 </Container>
-                <Blur position={'absolute'} top={'11vh'} left={-10} style={{ filter: 'blur(70px)' }} />
+                <Blur position={'absolute'} top={0} left={-10} style={{ filter: 'blur(70px)' }} />
             </Box>
         </>
     );
