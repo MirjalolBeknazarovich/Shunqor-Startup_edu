@@ -1,14 +1,18 @@
-import { Box, Container, Flex, HStack, IconButton, useColorMode, useColorModeValue } from "@chakra-ui/react";
+import { Box, Button, Container, Flex, HStack, IconButton, Menu, MenuButton, MenuItem, MenuList, useColorMode, useColorModeValue } from "@chakra-ui/react";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
 import { BsFillMoonStarsFill, BsFillSunFill } from "react-icons/bs";
-import { navigation } from "src/config/constants";
+import { TbWorld } from "react-icons/tb";
+import { language, navigation } from "src/config/constants";
 import { DarkLogo, LightLogo } from "src/icons";
 
 const AuthNavbarComponent = () => {
     const { colorMode, toggleColorMode } = useColorMode();
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
     const linkHover = useColorModeValue('black', 'white');
+    const onLanguage = (lng: string) => {
+        i18n.changeLanguage(lng);
+      };
     return (
         <>
             <Box zIndex={1001} w={'full'} h={'10vh'}>
@@ -21,6 +25,16 @@ const AuthNavbarComponent = () => {
                                     <Box as='a' color={'facebook.300'} _hover={{ textDecoration: 'underline', color: linkHover }} >{t(nav.label, { ns: 'layout' })}</Box>
                                 </Link>
                             ))}
+                            <Menu placement="bottom">
+                                <MenuButton as={Button} rightIcon={<TbWorld />} textTransform={'capitalize'} colorScheme={'facebook'} variant={'ghost'} >
+                                    {i18n.resolvedLanguage}
+                                </MenuButton>
+                                <MenuList p={0}>
+                                    {language.map(item => (
+                                        <MenuItem key={item.lng} onClick={() => onLanguage(item.lng)} icon={<item.icon />} backgroundColor={i18n.resolvedLanguage === item.lng ? 'facebook.500' : ''} >{item.nativeLng}</MenuItem>
+                                    ))}
+                                </MenuList>
+                            </Menu> F
                             <IconButton aria-label="color-mode"
                                 onClick={toggleColorMode}
                                 icon={colorMode == 'light' ? <BsFillMoonStarsFill /> : <BsFillSunFill />}
