@@ -1,5 +1,4 @@
-import { Box,	Button,	Checkbox,	Flex,	FormControl, FormLabel,	Heading, HStack, Icon, Input,	InputGroup,	InputRightElement, Stack,	Text,	useColorModeValue,} from '@chakra-ui/react';
-import Link from 'next/link';
+import { Box, Button, Checkbox, Flex, FormControl, FormLabel, Heading, HStack, Icon, Input, InputGroup, InputRightElement, Stack, Text, useColorModeValue, } from '@chakra-ui/react';
 import { useTranslation } from 'react-i18next';
 import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai';
 import { useShowPassword } from 'src/hooks/useShowPassword';
@@ -50,11 +49,9 @@ const Register = ({ onNavigateStateComponent }: RegisterProps) => {
 			</Flex>
 			<HStack justify={'space-between'}>
 				<Checkbox colorScheme={'facebook'}>{t('auth_remember_me', { ns: 'global' })}</Checkbox>
-				<Link href={'/account-recovery'}>
-					<Box as={'a'} color={'teal.500'} _hover={{ textDecoration: 'underline' }}>
-						{t('auth_forgot_password', { ns: 'global' })}
-					</Box>
-				</Link>
+				<Box as={'a'} onClick={() => onNavigateStateComponent('account-recovery')} cursor={'pointer'} color={'teal.500'} _hover={{ textDecoration: 'underline' }}>
+					{t('auth_forgot_password', { ns: 'global' })}
+				</Box>
 			</HStack>
 			<Button
 				w={'full'}
