@@ -29,7 +29,7 @@ const Login = ({ onNavigateStateComponent }: LoginProps) => {
 			</Text>
 			<FormControl isRequired>
 				<FormLabel>{t('login_input_email_label', { ns: 'global' })}</FormLabel>
-				<Input focusBorderColor='facebook.500' type='text' placeholder={'info@shunqor.ac'} h={14} />
+				<Input focusBorderColor='facebook.500' type='text' placeholder={'info@shunqor.com'} h={14} />
 			</FormControl>
 			<FormControl isRequired>
 				<FormLabel>{t('login_input_password_label', { ns: 'global' })}</FormLabel>
