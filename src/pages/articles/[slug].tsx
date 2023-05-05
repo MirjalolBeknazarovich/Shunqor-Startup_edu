@@ -2,14 +2,15 @@ import { GetServerSideProps } from "next";
 import { ArticleType } from "src/interface/article.interface";
 import { Language } from "src/interface/constants.interface";
 import { withLayout } from "src/layouts/layout";
+import Seo from "src/layouts/seo/seo";
 import { ArticleDetialedComponent } from "src/page-component";
 import { Articles } from "src/services/article.services";
 
-const ArticleDetailPage = ({ article }: ArticleDetailedPageProps) => {
-    console.log(article);
-    
+const ArticleDetailPage = ({ article }: ArticleDetailedPageProps) => {    
   return (
-    <ArticleDetialedComponent article={article} />
+    <Seo metaTitle={article.title} metaDescription={article.excerpt}>
+        <ArticleDetialedComponent article={article} />
+    </Seo>
   );
 };
 
