@@ -38,38 +38,66 @@ const DetailedCourseComponent = () => {
     <>
       {/* Header content */}
       <Card>
-        <CardBody pos={'relative'} p={{ base: 2, md: 5 }} >
-          <Stack direction={{ base: 'column', md: 'row' }} gap={5}>
-            <Box w={{ base: '100%', lg: '60%' }}>
-              <Heading mt={5} fontSize={"3xl"}>
-                {course?.title}
-              </Heading>
-              <Text mt={5}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo non asperiores nam numquam pariatur quos ipsa quis beatae doloribus debitis.</Text>
-              <Stack mt={5} direction={!media ? 'column' : 'row'} gap={1}>
-                <Flex fontSize={'sm'} align={'flex-end'} gap={1}>
-                  <Text>5.0</Text>
-                  <ReactStars edit={false} value={5} />
-                  <Text>(10)</Text>
-                </Flex>
-                <Flex align={'center'} fontSize={'sm'} gap={1}>
-                  <Icon as={FaUserGraduate} />
-                  <Text>100 O'quvchilar</Text>
-                </Flex>
-                <Flex align={'center'} fontSize={'sm'} gap={1}>
-                  <Icon as={TfiAlarmClock} />
-                  <Text>Oxirgi yangilanish {format(new Date(), 'dd MMMM, yyyy')}</Text>
-                </Flex>
-              </Stack>
-            </Box>
-            <Box w={{ base: '100%', lg: '39%' }} position={{ base: 'relative', lg: 'absolute' }} right={{ base: 0, lg: 2 }}>
-              <Card variant={'outline'} boxShadow={'dark-lg'}>
-                <CardBody p={{ base: 2, lg: 5 }}>
-                  <Image src={course?.image} alt={course?.title} w={'full'} h={'300px'} style={{ objectFit: 'cover', borderRadius: '8px' }} />
-                  <Stack mt={5} direction={'row'} align={'flex-end'} justify={'space-between'}>
-                    <Heading fontSize={'2xl'}>Bepul</Heading>
-                    <Text textDecoration={'line-through'}>{course?.price.toLocaleString('en-US', { currency: 'USD', style: 'currency' })}</Text>
-                  </Stack>
-                  <Button mt={5} w={'full'} colorScheme="facebook">Enroll</Button>
+				<CardBody pos={'relative'} p={{ base: 2, md: 5 }}>
+					<Stack direction={{ base: 'column', md: 'row' }} gap={5}>
+						<Box w={{ base: '100%', lg: '60%' }}>
+							<Heading mt={5} fontSize={'3xl'}>
+								{course?.title}
+							</Heading>
+							<Text mt={5}>
+								Lorem ipsum dolor sit amet consectetur adipisicing elit.
+								Laboriosam quaerat exercitationem architecto quos at odio totam,
+								doloribus dolorem asperiores. Animi?
+							</Text>
+							<Stack mt={5} direction={!media ? 'column' : 'row'} gap={1}>
+								<Flex fontSize={'sm'} align={'flex-end'} gap={1}>
+									<Text>5.0</Text>
+									<ReactStars edit={false} value={5} />
+									<Text>(10)</Text>
+								</Flex>
+								<Flex align={'center'} fontSize={'sm'} gap={1}>
+									<Icon as={FaUserGraduate} />
+									<Text>100 O'quvchilar</Text>
+								</Flex>
+								<Flex align={'center'} fontSize={'sm'} gap={1}>
+									<Icon as={TfiAlarmClock} />
+									<Text>
+										Oxirgi yangilanish {format(new Date(), 'dd MMMM, yyyy')}
+									</Text>
+								</Flex>
+							</Stack>
+						</Box>
+						<Box
+							w={{ base: '100%', lg: '39%' }}
+							position={{ base: 'relative', lg: 'absolute' }}
+							right={{ base: 0, lg: 2 }}
+						>
+							<Card variant={'outline'} boxShadow={'dark-lg'}>
+								<CardBody p={{ base: 2, lg: 5 }}>
+									<Image
+										w={'full'}
+										h={'300px'}
+										src={course?.image}
+										alt={course?.title}
+										style={{ objectFit: 'cover', borderRadius: '8px' }}
+									/>
+									<Stack
+										mt={5}
+										direction={'row'}
+										align={'flex-end'}
+										justify={'space-between'}
+									>
+										<Heading fontSize={'2xl'}>Bepul</Heading>
+										<Text textDecoration={'line-through'}>
+											{course?.price.toLocaleString('en-US', {
+												currency: 'USD',
+												style: 'currency',
+											})}
+										</Text>
+									</Stack>
+									<Button mt={5} w={'full'} h={14} colorScheme={'facebook'}>
+										{t('enroll', { ns: 'courses' })}
+									</Button>
                   <Box mt={30}>
                     <Flex justify={'space-between'} align={'center'} py={2} px={2} fontSize={'17px'}>
                       <Flex align={'center'} gap={3}>
