@@ -21,7 +21,7 @@ const DetailedCourseComponent = () => {
 
   const router = useRouter();
 
-  const [media] = useMediaQuery('(min-width: 592px');
+  const [media] = useMediaQuery('(min-width: 1024px');
 
   const { t } = useTranslation();
 
@@ -189,7 +189,7 @@ const DetailedCourseComponent = () => {
 					{tabIndex === 0 && <Overview />}
 					{tabIndex === 1 && <Curriculum />}
 					{tabIndex === 2 && <Review />}
-					{tabIndex === 3 && <Mentorx />}
+					{tabIndex === 3 && <Mentor />}
 				</Box>
       </Tabs>
     </>
