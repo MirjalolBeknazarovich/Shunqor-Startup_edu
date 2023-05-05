@@ -5,13 +5,17 @@ import { CiViewList } from "react-icons/ci";
 import { AiOutlineClockCircle } from "react-icons/ai";
 import { SiGoogleanalytics } from "react-icons/si";
 import { BsMinecartLoaded } from "react-icons/bs";
+import { useRouter } from "next/router";
 
 const AllCoursesCard = ({ course }: AllCoursesCardProps) => {
+    const router = useRouter();
+
+    const onDetailedCource = () => router.push(`/courses/${course.slug}`);
     return (
         <>
             <Box py={3}>
                 <Flex gap={4} direction={{ base: 'column', md: 'row' }}>
-                    <Image src={course.image} alt={course.title} w={{ base: 'full', md: '250px' }} h={'280px'} borderRadius={'lg'} objectFit={'cover'} />
+                    <Image src={course.image} alt={course.title} onClick={onDetailedCource} cursor={'pointer'} w={{ base: 'full', md: '250px' }} h={'280px'} borderRadius={'lg'} objectFit={'cover'} />
                     <Stack>
                         <HStack>
                             <Text color={'#e59819'}>{course.reviewAvarage.toFixed(1)}</Text>
@@ -46,7 +50,7 @@ const AllCoursesCard = ({ course }: AllCoursesCardProps) => {
                             <Text fontSize={'xl'} fontWeight={'bold'} mr={10}>{course.price.toLocaleString('en-US', { style: 'currency', currency: 'USD' })}</Text>
                             <Flex gap={4}>
                                 <Button rightIcon={<BsMinecartLoaded />} colorScheme={'facebook'} >Add to card</Button>
-                                <Button colorScheme={'facebook'} variant={'outline'} >Detail</Button>
+                                <Button colorScheme={'facebook'} variant={'outline'} onClick={onDetailedCource} cursor={'pointer'} >Detail</Button>
                             </Flex>
                         </Flex>
                     </Stack>
