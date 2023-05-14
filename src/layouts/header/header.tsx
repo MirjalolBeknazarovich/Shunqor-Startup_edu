@@ -9,6 +9,7 @@ import { HeaderProps } from "./header.props";
 import { language } from "src/config/constants";
 import { useTranslation } from "react-i18next";
 import { useRouter } from "next/router";
+import { AiOutlineLogin } from "react-icons/ai";
 
 const Header = ({ onToggle }: HeaderProps): JSX.Element => {
 
@@ -59,7 +60,15 @@ const Header = ({ onToggle }: HeaderProps): JSX.Element => {
             colorScheme={'facebook'}
             variant={'outline'}
           />
-          <Button rightIcon={<BiUserCircle />} onClick={() => router.push('/auth')} colorScheme={'facebook'}>{ t('login', {ns: 'layout'}) }</Button>
+          <Button display={{base: 'none', md: 'flex'}} rightIcon={<BiUserCircle />} onClick={() => router.push('/auth')} colorScheme={'facebook'}>{ t('login', {ns: 'layout'}) }</Button>
+          <IconButton
+								display={{ base: 'flex', md: 'none' }}
+								aria-label='login'
+								onClick={() => router.push('/auth')}
+								icon={<AiOutlineLogin />}
+								colorScheme={'facebook'}
+								variant={'outline'}
+							/>
         </HStack>
       </Flex>
     </Box>
