@@ -3,10 +3,17 @@ import { useTranslation } from 'react-i18next';
 import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai';
 import { useShowPassword } from 'src/hooks/useShowPassword';
 import { RegisterProps } from './register.props';
+import { useActions } from 'src/hooks/useActions';
 
 const Register = ({ onNavigateStateComponent }: RegisterProps) => {
 	const { show, toggleShow, showConfirm, toggleShowConfirm } = useShowPassword();
 	const { t } = useTranslation();
+
+	const { register } = useActions();
+
+	const onSubmit = () => {
+		register({email: "shunqor1@gmail.com", password: "123456"});
+	};
 
 	return (
 		<Stack spacing={4}>
@@ -59,6 +66,7 @@ const Register = ({ onNavigateStateComponent }: RegisterProps) => {
 				color={'white'}
 				_hover={{ bgGradient: 'linear(to-r, facebook.500,gray.500)', boxShadow: 'xl' }}
 				h={14}
+				onClick={onSubmit}
 			>
 				{t('register_btn', { ns: 'global' })}
 			</Button>

@@ -3,13 +3,20 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai';
 import { LoginProps } from './login.props';
+import { useActions } from 'src/hooks/useActions';
 
 const Login = ({ onNavigateStateComponent }: LoginProps) => {
 	const [show, setShow] = useState<boolean>(false);
 
 	const { t } = useTranslation();
 
+	const { login } = useActions();
+
 	const toggleShow = () => setShow(prev => !prev);
+
+	const onSubmit = () => {
+		login({email: "shunqor1@gmail.com", password: "123456"});
+	};
 
 	return (
 		<Stack spacing={4}>
@@ -51,6 +58,7 @@ const Login = ({ onNavigateStateComponent }: LoginProps) => {
 				color={'white'}
 				_hover={{ bgGradient: 'linear(to-r, facebook.500,gray.500)', boxShadow: 'xl' }}
 				h={14}
+				onClick={onSubmit}
 			>
 				{t('login_btn', { ns: 'global' })}
 			</Button>
