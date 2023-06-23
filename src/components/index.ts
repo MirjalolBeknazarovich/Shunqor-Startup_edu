@@ -17,3 +17,4 @@ export { default as Overview } from './overview/overview';
 export { default as Review } from './review/review';
 export { default as Mentor } from './mentor/mentor';
 export { default as Curriculum } from './curriculum/curriculum';
+export { default as ErrorAlert } from './error-alert/error-alert';

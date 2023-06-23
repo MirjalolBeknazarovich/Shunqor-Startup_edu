@@ -3,6 +3,7 @@ import { UserType } from "src/interface/user.interface";
 export interface UserIntialStateType {
     user: UserType | null;
     isLoading: boolean;
+    error: string | null | unknown;
 }
 
 export interface AuthTokens {
@@ -17,4 +18,9 @@ export interface AuthUserResponse extends AuthTokens {
 export interface InterfaceEmailAndPassword {
     password: string;
     email: string;
+}
+
+export interface InterfaceEmailAndOtp { 
+    email: string, 
+    otpVerification: string 
 }
